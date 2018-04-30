@@ -96,7 +96,23 @@
                 </select>
                 <button type="submit" name="submit3">Envoyer</button>
             </form>
-            <?php require "tablesrandom.php"?>
+<?php
+            if(isset($_GET['submit3'])){ //Si le submit a une valeur (quand cliqué)
+            $submit = $_GET['submit3']; //On associe la variable au bouton
+    
+            if(empty($_GET['liste']) AND isset($submit)){ //Si le name liste est vide (par défaut) et le bouton submit appuyé
+?>
+                <p>Veuillez choisir une table</p>
+<?php       }
+            if(!empty($_GET['liste']) AND isset($submit)){ //Si le name liste est différent de vide et le bouton submit appuyé
+                $listes = $_GET['liste']; //On associe la variable listes aux valeurs du name liste
+                    for($b=1;$b<=10;$b++){ //Boucle 1 à 10
+                        $result = $listes * $b; //Le résultat = Valeur choisie multiplié jusqu'à 10
+                        echo ("<li>" . $listes . 'x' . $b ." = ". $result . "</li>");
+                    }
+                }
+            }
+?>
             <p class="repTable"></p>
         </section>
 
