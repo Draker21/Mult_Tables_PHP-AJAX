@@ -106,14 +106,18 @@
 <?php       }
             if(!empty($_GET['liste']) AND isset($submit)){ //Si le name liste est différent de vide et le bouton submit appuyé
                 $listes = $_GET['liste']; //On associe la variable listes aux valeurs du name liste
+?>                  <div class="repTable"> 
+<?php                    
                     for($b=1;$b<=10;$b++){ //Boucle 1 à 10
                         $result = $listes * $b; //Le résultat = Valeur choisie multiplié jusqu'à 10
-                        echo ("<li>" . $listes . 'x' . $b ." = ". $result . "</li>");
+?>
+                        <?php echo ("<li>" . $listes . 'x' . $b ." = ". $result . "</li>"); ?>
+<?php
                     }
                 }
             }
 ?>
-            <p class="repTable"></p>
+            </div> 
         </section>
 
 <!-- PART 4 -->
