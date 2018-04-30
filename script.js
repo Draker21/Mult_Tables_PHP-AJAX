@@ -1,7 +1,7 @@
-var form = document.querySelector('#tables'); //Sélectionne l'id du form
-var form1 = document.querySelector('#listeD'); //Sélectionne l'id du form
-var form2 = document.querySelector('#jeu'); //Sélectionne l'id du form
-var form3 = document.querySelector('#last'); //Sélectionne l'id du form
+var submitCheckbox = document.querySelector('#submitcheckbox'); //Sélectionne l'id du form
+var submitSelect = document.getElementById('submitselect'); //Sélectionne l'id du form
+var submitSelectTable = document.querySelector('#submitselecttable'); //Sélectionne l'id du form
+var submitReponse = document.querySelector('#submitreponse'); //Sélectionne l'id du form
 
 function getxhr(){ 
     try{xhr=new XMLHttpRequest();} 
@@ -17,16 +17,33 @@ function getxhr(){
     return xhr; 
 }
 
-form.addEventListener('click', function(e){ //Ajoute un listener sur la fonction submit de la form | Fonction qui fera le traitement
-    
-    var xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){ 
-        if(xhr.readyState === 4 && xhr.status === 200){ //Vérifie si les infos sont prêtes à être lancées (STADE 4)
-            document.getElementById('repTable').innerHTML = this.xhr
-        }
-    xhr.open('GET', "index.php?tables=" + form, true) //Soumet les actions avec la même méthode en asynchrone
-    xhr.send()
+/* form.addEventListener('click', function(e){
+    var xhr = getxhr();
 
-    e.preventDefault() //Annule l'envoie du form en cours
-}})
+}) */
+
+submitSelect.addEventListener('click', function(e){ //Ajoute un listener sur la fonction submit de la form | Fonction qui fera le traitement
+    var selectTable = document.getElementById("listeDeroulante");
+    var selectValue = parseInt(selectTable.value);
+
+    if(selectValue > 0)
+    {
+        var xhr = getxhr();
+        xhr.onreadystatechange = function(){ 
+            if(this.readyState == 4 && this.status == 200){ //Vérifie si les infos sont prêtes à être lancées (STADE 4)
+                var BlockReponse = document.getElementById('repTable');
+                BlockReponse.innerHTML = this.responseText;
+            }
+        };
+    
+
+        xhr.open('GET', "index.php?liste=" + selectValue, true) //Soumet les actions avec la même méthode en asynchrone
+        xhr.send()
+    }   else
+        {
+            document.getElementById('repTable').innerHTML = 'Erreur';
+        }
+
+    e.preventDefault(); //Annule l'envoie du form en cours
+})
 

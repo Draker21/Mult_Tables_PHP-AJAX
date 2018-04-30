@@ -1,6 +1,6 @@
 <?php
 
-if(isset($_GET['tables'])){ //Si tables différent de NULL
+/* if(isset($_GET['tables'])){ //Si tables différent de NULL
     $value = intval($_GET['selectedValue']); //valeur numérique entière
     $retour = '<ul>';
 
@@ -10,5 +10,5 @@ if(isset($_GET['tables'])){ //Si tables différent de NULL
 
     $retour .= '</ul>';
     echo $retour;
-} 
+}  */
 ?>

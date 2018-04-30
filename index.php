@@ -56,7 +56,7 @@
                 <label for="table10">Table de 10</label>
                 <input type="checkbox" name="table[]" id="table10" value="10">
 
-                <button type="submit" name="submit">Envoyer</button>
+                <button type="submit" id="submitcheckbox" name="submit">Envoyer</button>
             </form>
 <?php           if(isset($_GET['submit'])){ //Si le submit différent de NULL
                 $submit = $_GET['submit']; //On associe la variable au bouton
@@ -94,7 +94,7 @@
                     <option value="9">Table de 9</option>
                     <option value="10">Table de 10</option>
                 </select>
-                <button type="submit" name="submit3">Envoyer</button>
+                <button type="submit" id="submitselect" name="submit3">Envoyer</button>
             </form>
 <?php
             if(isset($_GET['submit3'])){ //Si le submit a une valeur (quand cliqué)
@@ -106,18 +106,20 @@
 <?php       }
             if(!empty($_GET['liste']) AND isset($submit)){ //Si le name liste est différent de vide et le bouton submit appuyé
                 $listes = $_GET['liste']; //On associe la variable listes aux valeurs du name liste
-?>                  <div class="repTable"> 
+?>                  <div id="repTable"> 
 <?php                    
                     for($b=1;$b<=10;$b++){ //Boucle 1 à 10
                         $result = $listes * $b; //Le résultat = Valeur choisie multiplié jusqu'à 10
-?>
-                        <?php echo ("<li>" . $listes . 'x' . $b ." = ". $result . "</li>"); ?>
-<?php
+
+                         echo ("<li>" . $listes . 'x' . $b ." = ". $result . "</li>"); 
+
                     }
-                }
+?>
+                    </div>
+<?php           }
             }
 ?>
-            </div> 
+             
         </section>
 
 <!-- PART 4 -->
@@ -137,7 +139,7 @@
                     <option value="9">Table de 9</option>
                     <option value="10">Table de 10</option>
                 </select>
-                <button type="submit" name="submit4">Envoyer</button>
+                <button type="submit" id="submitselecttable" name="submit4">Envoyer</button>
             </form>
                     
             <form method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
@@ -149,7 +151,7 @@
                     <input type="hidden" name="result" value="<?php echo $result ?>">
 <?php           } ?>
                 <input type="number" name="answer" id="answer">
-                <button type="submit" name="submit5">Envoyer</button>
+                <button type="submit" id="submitreponse" name="submit5">Envoyer</button>
             </form>
             
 <?php       if(isset($_GET['submit5']) && isset($_GET['result'])){ //Si le submit a une valeur (quand cliqué)
