@@ -1,4 +1,4 @@
-    <?php require "tablesrandom.php"?>
+    
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -8,6 +8,8 @@
         <title>AJAX</title>
     </head>
     <body>
+
+<!-- PART 1 -->
         <section class="flex justify-content-center">
             <div>
                 <h2>La joie du random #1</h2>
@@ -19,9 +21,8 @@
                 </ul>
             </div>
         </section>
-        
 
-
+<!-- PART 2 -->
         <section class="flex justify-content">
             <h2>Les données disponibles #2</h2>
             <form name="tables" id="tables" method="GET"> 
@@ -57,7 +58,7 @@
 
                 <button type="submit" name="submit">Envoyer</button>
             </form>
-<?php           if(isset($_GET['submit'])){ //Si le submit a une valeur (quand cliqué)
+<?php           if(isset($_GET['submit'])){ //Si le submit différent de NULL
                 $submit = $_GET['submit']; //On associe la variable au bouton
                 if(empty($_GET['table']) AND isset($submit)){ //Si les input checkbox table[] est vide et le bouton submit appuyé
 ?>
@@ -76,6 +77,7 @@
 ?>
         </section>
 
+<!-- PART 3 -->
         <section class="container">
         <h2>La liste presque infinie #3</h2>
             <form method="GET" id="listeD" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
@@ -94,9 +96,11 @@
                 </select>
                 <button type="submit" name="submit3">Envoyer</button>
             </form>
+            <?php require "tablesrandom.php"?>
             <p class="repTable"></p>
         </section>
 
+<!-- PART 4 -->
         <section class="container">
             <h2>Le jeu du calcul mental édition débile #4</h2>
             <form method="GET" id="jeu" action="index.php">
