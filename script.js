@@ -1,8 +1,3 @@
-var submitCheckbox = document.querySelector('#submitcheckbox'); //Sélectionne l'id du form
-var submitSelect = document.getElementById('submitselect'); //Sélectionne l'id du form
-var submitSelectTable = document.querySelector('#submitselecttable'); //Sélectionne l'id du form
-var submitReponse = document.querySelector('#submitreponse'); //Sélectionne l'id du form
-
 function getxhr(){ 
     try{xhr=new XMLHttpRequest();} 
     catch(e){ 
@@ -17,33 +12,39 @@ function getxhr(){
     return xhr; 
 }
 
-/* form.addEventListener('click', function(e){
-    var xhr = getxhr();
+// Recup l'id de chaque bouton des différents exercices.
 
-}) */
+var submitCheckbox = document.querySelector('#submitcheckbox');
+var submitSelect = document.querySelector('#submitselect');
+var submitSelectTable = document.querySelector('#submitselecttable');
+var submitReponse = document.querySelector('#submitreponse');
 
-submitSelect.addEventListener('click', function(e){ //Ajoute un listener sur la fonction submit de la form | Fonction qui fera le traitement
+
+//Ajoute un event click et une fonction qui fera le traitement en AJAX.
+submitSelect.addEventListener('click', function(e){
     var selectTable = document.getElementById("listeDeroulante");
     var selectValue = parseInt(selectTable.value);
-
+    
     if(selectValue > 0)
     {
-        var xhr = getxhr();
-        xhr.onreadystatechange = function(){ 
-            if(this.readyState == 4 && this.status == 200){ //Vérifie si les infos sont prêtes à être lancées (STADE 4)
-                var BlockReponse = document.getElementById('repTable');
-                BlockReponse.innerHTML = this.responseText;
+        xhr = getxhr();
+        xhr.onreadystatechange = function()
+        { 
+            if(this.readyState == 4 && this.status === 200) //Vérifie si les infos sont prêtes à être lancées (STADE 4 + Status à 200)
+            { 
+                var blockReponse = document.getElementById('repTable');
+                blockReponse.innerHTML = this.responseText;             
             }
-        };
+        }
     
-
-        xhr.open('GET', "index.php?liste=" + selectValue, true) //Soumet les actions avec la même méthode en asynchrone
-        xhr.send()
+        //Soumet les actions avec la méthode en asynchrone
+        xhr.open('GET', "traitement.php?selectedValue=" + selectValue, true);
+        xhr.send();
     }   else
         {
-            document.getElementById('repTable').innerHTML = 'Erreur';
+            document.getElementById('repTable').innerHTML = 'Erreur';   
         }
 
     e.preventDefault(); //Annule l'envoie du form en cours
-})
+});
 

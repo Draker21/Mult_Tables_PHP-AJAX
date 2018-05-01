@@ -1,4 +1,4 @@
-    
+<?php require ('traitement.php'); ?> 
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>AJAX</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
 
@@ -14,10 +15,12 @@
             <div>
                 <h2>La joie du random #1</h2>
                 <ul>
-<?php                  $x = rand(1,10); //Random de 1 à 10
-                        for($y=1;$y<=10;$y++){ 
-                        echo nl2br("<li>" . $x . 'x' . $y ." = ". $x*$y . "</li>");
-} ?>
+<?php                   $x = rand(1,10); //Random de 1 à 10
+                        for($y=1;$y<=10;$y++)
+                        { 
+                            echo nl2br("<li>" . $x . 'x' . $y ." = ". $x*$y . "</li>");
+                        } 
+?>
                 </ul>
             </div>
         </section>
@@ -56,24 +59,29 @@
                 <label for="table10">Table de 10</label>
                 <input type="checkbox" name="table[]" id="table10" value="10">
 
-                <button type="submit" id="submitcheckbox" name="submit">Envoyer</button>
+                <button type="submit" id="submitcheckbox" name="submit" >Envoyer</button>
             </form>
-<?php           if(isset($_GET['submit'])){ //Si le submit différent de NULL
-                $submit = $_GET['submit']; //On associe la variable au bouton
-                if(empty($_GET['table']) AND isset($submit)){ //Si les input checkbox table[] est vide et le bouton submit appuyé
+<?php           if(isset($_GET['submit']))
+                { //Si le submit différent de NULL
+                    $submit = $_GET['submit']; //On associe la variable au bouton
+                    if(empty($_GET['table']) && isset($submit))    //Si les input checkbox table[] est vide et le bouton submit appuyé
+                    { 
 ?>
-                <p>Veuillez retourner une valeur</p> 
-<?php           }
-                if(!empty($_GET['table']) AND isset($submit)){ //Si input checkbox table[] est différent de vide et le bouton submit appuyé
-                    $tables = $_GET['table']; //On associe la variable table aux valeurs de la form
-                    foreach($tables as $key =>$value){ //Boucle dans le form en tant que key(index soit) / value = élément en cours
-                        for($a=1;$a<=10;$a++){ //boucle de 1 à 10
-                            $result = $value * $a; //resultat = sa valeur (de l'HTML) * la boucle
-                            echo("<li>" . $value . 'x' . $a ." = ". $result . "</li>");
+                        <p>Veuillez retourner une valeur</p> 
+<?php               }
+                    if(!empty($_GET['table']) && isset($submit)) //Si input checkbox table[] est différent de vide et le bouton submit appuyé
+                    { 
+                        $tables = $_GET['table']; //On associe la variable table aux valeurs du select
+                        foreach($tables as $key =>$value)   //Boucle dans le form en tant que key(index soit) / value = élément en cours
+                        { 
+                            for($a=1;$a<=10;$a++)   //boucle de 1 à 10
+                            { 
+                                $result = $value * $a; //resultat = sa valeur de l'HTML * la boucle
+                                echo "<li>" . $value . 'x' . $a ." = ". $result . "</li>";
+                            }
                         }
                     }
                 }
-            }
 ?>
         </section>
 
@@ -94,32 +102,9 @@
                     <option value="9">Table de 9</option>
                     <option value="10">Table de 10</option>
                 </select>
-                <button type="submit" id="submitselect" name="submit3">Envoyer</button>
+                <button type="submit" id="submitselect" name="submitselect">Envoyer</button>
             </form>
-<?php
-            if(isset($_GET['submit3'])){ //Si le submit a une valeur (quand cliqué)
-            $submit = $_GET['submit3']; //On associe la variable au bouton
-    
-            if(empty($_GET['liste']) AND isset($submit)){ //Si le name liste est vide (par défaut) et le bouton submit appuyé
-?>
-                <p>Veuillez choisir une table</p>
-<?php       }
-            if(!empty($_GET['liste']) AND isset($submit)){ //Si le name liste est différent de vide et le bouton submit appuyé
-                $listes = $_GET['liste']; //On associe la variable listes aux valeurs du name liste
-?>                  <div id="repTable"> 
-<?php                    
-                    for($b=1;$b<=10;$b++){ //Boucle 1 à 10
-                        $result = $listes * $b; //Le résultat = Valeur choisie multiplié jusqu'à 10
-
-                         echo ("<li>" . $listes . 'x' . $b ." = ". $result . "</li>"); 
-
-                    }
-?>
-                    </div>
-<?php           }
-            }
-?>
-             
+            <div class="bg-red" id="repTable"><ul></ul></div>                      
         </section>
 
 <!-- PART 4 -->
@@ -166,6 +151,7 @@
                 echo 'La tortue dépasse le lièvre.. Générez au moins une opération !';
             } ?>            
         </section>
-                <script src="script.js"></script>
-        </body>
-        </html>
+
+        <script src="script.js"></script>
+    </body>
+</html>
