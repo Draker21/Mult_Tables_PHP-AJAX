@@ -1,4 +1,5 @@
-<?php require ('traitement.php'); ?> 
+<?php require ('traitement.php'); ?>
+ 
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -28,61 +29,40 @@
 <!-- PART 2 -->
         <section class="flex justify-content">
             <h2>Les données disponibles #2</h2>
-            <form name="tables" id="tables" method="GET"> 
+            <form name="tables" id="tables" method="GET" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>"> 
                 <label for="table1">Table de 1</label>
-                <input type="checkbox" name="table[]" id="table1" value="1">
+                <input class="checkbox" type="checkbox" id="table1" value="1">
                 
                 <label for="table2">Table de 2</label>
-                <input type="checkbox" name="table[]" id="table2" value="2">
+                <input class="checkbox" type="checkbox" id="table2" value="2">
                 
                 <label for="table3">Table de 3</label>
-                <input type="checkbox" name="table[]" id="table3" value="3">
+                <input class="checkbox" type="checkbox" id="table3" value="3">
                 
                 <label for="table4">Table de 4</label>
-                <input type="checkbox" name="table[]" id="table4" value="4">
+                <input class="checkbox" type="checkbox" id="table4" value="4">
                 
                 <label for="table5">Table de 5</label>
-                <input type="checkbox" name="table[]" id="table5" value="5">
+                <input class="checkbox" type="checkbox" id="table5" value="5">
                 
                 <label for="table6">Table de 6</label>
-                <input type="checkbox" name="table[]" id="table6" value="6">
+                <input class="checkbox" type="checkbox" id="table6" value="6">
                 
                 <label for="table7">Table de 7</label>
-                <input type="checkbox" name="table[]" id="table7" value="7">
+                <input class="checkbox" type="checkbox" id="table7" value="7">
                 
                 <label for="table8">Table de 8</label>
-                <input type="checkbox" name="table[]" id="table8" value="8">
+                <input class="checkbox" type="checkbox" id="table8" value="8">
                 
                 <label for="table9">Table de 9</label>
-                <input type="checkbox" name="table[]" id="table9" value="9">
+                <input class="checkbox" type="checkbox" id="table9" value="9">
                 
                 <label for="table10">Table de 10</label>
-                <input type="checkbox" name="table[]" id="table10" value="10">
+                <input class="checkbox" type="checkbox" id="table10" value="10">
 
-                <button type="submit" id="submitcheckbox" name="submit" >Envoyer</button>
+                <button type="submit" id="submitcheckbox" name="submitcheckbox">Envoyer</button>
             </form>
-<?php           if(isset($_GET['submit']))
-                { //Si le submit différent de NULL
-                    $submit = $_GET['submit']; //On associe la variable au bouton
-                    if(empty($_GET['table']) && isset($submit))    //Si les input checkbox table[] est vide et le bouton submit appuyé
-                    { 
-?>
-                        <p>Veuillez retourner une valeur</p> 
-<?php               }
-                    if(!empty($_GET['table']) && isset($submit)) //Si input checkbox table[] est différent de vide et le bouton submit appuyé
-                    { 
-                        $tables = $_GET['table']; //On associe la variable table aux valeurs du select
-                        foreach($tables as $key =>$value)   //Boucle dans le form en tant que key(index soit) / value = élément en cours
-                        { 
-                            for($a=1;$a<=10;$a++)   //boucle de 1 à 10
-                            { 
-                                $result = $value * $a; //resultat = sa valeur de l'HTML * la boucle
-                                echo "<li>" . $value . 'x' . $a ." = ". $result . "</li>";
-                            }
-                        }
-                    }
-                }
-?>
+            <div class="bg-red" id="repCheckbox"></div>
         </section>
 
 <!-- PART 3 -->
@@ -104,7 +84,7 @@
                 </select>
                 <button type="submit" id="submitselect" name="submitselect">Envoyer</button>
             </form>
-            <div class="bg-red" id="repTable"><ul></ul></div>                      
+            <div class="bg-red" id="repTable"></div>                      
         </section>
 
 <!-- PART 4 -->
