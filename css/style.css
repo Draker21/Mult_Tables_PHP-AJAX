@@ -21,8 +21,11 @@
     .justify-content-between{justify-content:space-between;}
 
     .align-self-center{align-self: center;}
+    .align-self-end{align-self: flex-end;}
 
     .align-items-center{align-items: center;}
+    
+    .column{flex-direction: column;}
 
     /* =========================================================================
                                     Margin & Padding
@@ -30,6 +33,8 @@
     .nomargin{margin: 0;}
     .nopadding{padding: 0;}
     .m-auto{margin:auto;}
+
+    .mlr-auto{margin: 0 auto;}
 
     .m-10{margin: 10px;}
 
@@ -42,6 +47,8 @@
 
     .h100{height: 100vh;}
 
+    .w50{width: 50%;}
+    .w40{width: 40%;}
     /* =========================================================================
                                     Font-size & Font-family
     ========================================================================= */
@@ -60,13 +67,14 @@
     .Montserrat-bold{font-family: 'Montserrat', sans-serif; font-weight: 700;}
 
     /* =========================================================================
-                                    Color & Background
+                                Color & Background & border
     ========================================================================= */
 
-    .color-1{color: black;}
-
+    .color-1{color: #B22222;}
     .white{color: #fff;}
 
+    .borderb-1{border-bottom: 1px solid #fff;}
+    
     .bg-red{background-color: red;}
 
     .bg-img{background: url('../img/background-ardoise.jpg') center center; background-size: cover;}
@@ -79,6 +87,8 @@
 
     .list-style-none{list-style: none;}
 
+    .text-justify{text-align: justify;}
+
 /* =========================================================================
                                 Spécifique
 ========================================================================= */
@@ -88,7 +98,8 @@
     ========================================================================= */
 
     /* Effet hover */
-    nav,li:hover{color: black;}
+    .color-nav{color: #F0F001;}
+    .color-nav:hover{color: #fff;}
 
     .fixed-top{position: fixed; width: 100%; left:0; top:0;}
     .logo{width: 150px; height:150px;}
