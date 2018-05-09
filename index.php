@@ -1,29 +1,47 @@
-<?php require ('traitement.php'); ?>
- 
+<?php require ('ajax/traitement.php'); ?>
+
     <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>AJAX</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
+    <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <link href="https://fonts.googleapis.com/css?family=Pangolin" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:500,700" rel="stylesheet">
+            <link rel="stylesheet" href="css/style.css">
+            <title>Révision mathématique</title>
+        </head>
+
     <body>
 
+<!-- HEADER -->
+    <header>
+        <nav class="fixed-top">
+            <ul class="Montserrat-bold fs-20 d-flex justify-content-around align-items-center">
+                <a class="no-decoration list-style-none m-10" href="#sectionrandom"><li class="white">L'aléatoire</li></a>
+                <a class="no-decoration list-style-none m-10" href="#sectioncheckbox"><li class="white">Les particulières</li></a>
+                <img class="logo" src="img/logo.png" alt="Logo">
+                <a class="no-decoration list-style-none m-10" href="#sectionselect"><li class="white">La selection</li></a>
+                <a class="no-decoration list-style-none m-10" href="#sectionquizz"><li class="white">Le Quizz final</li></a>
+            </ul>
+        </nav>
+    </header>
 <!-- PART 1 -->
-        <section class="flex justify-content-center">
-            <div>
-                <h2>La joie du random #1</h2>
-                <ul>
-<?php                   $x = rand(1,10); //Random de 1 à 10
-                        for($y=1;$y<=10;$y++)
-                        { 
-                            echo nl2br("<li>" . $x . 'x' . $y ." = ". $x*$y . "</li>");
-                        } 
-?>
-                </ul>
+        <section id="sectionrandom" class="bg-img h100 d-flex justify-content-center">
+            <div class="align-self-center">
+                <h3>Une petite révision?</h3>
+                <p>Faites</p>
             </div>
+
+            <ul class="align-self-center Pangolin white fs-40">
+<?php           $x = rand(1,10); //Random de 1 à 10
+                    for($y=1;$y<=10;$y++)
+                    { 
+                        echo nl2br('<li class="mt-20">' . $x . 'x' . $y ." = ". $x*$y . "</li>");
+                    } 
+?>
+            </ul>
+            
         </section>
 
 <!-- PART 2 -->
@@ -118,6 +136,6 @@
             <div class="bg-red" id="responseCalcul"></div>
         </section>
 
-        <script src="script.js"></script>
+        <script src="js/script.js"></script>
     </body>
 </html>

@@ -1,0 +1,97 @@
+@import 'reset.css';
+
+/* =========================================================================
+                                Classe générique
+========================================================================= */
+
+    /* =========================================================================
+                                    Display & position
+    ========================================================================= */
+
+    .d-flex{display: flex;}
+
+    
+
+    /* =========================================================================
+                                    Flex Box
+    ========================================================================= */
+
+    .justify-content-center{justify-content:center;}
+    .justify-content-around{justify-content:space-around;}
+    .justify-content-between{justify-content:space-between;}
+
+    .align-self-center{align-self: center;}
+
+    .align-items-center{align-items: center;}
+
+    /* =========================================================================
+                                    Margin & Padding
+    ========================================================================= */
+    .nomargin{margin: 0;}
+    .nopadding{padding: 0;}
+    .m-auto{margin:auto;}
+
+    .m-10{margin: 10px;}
+
+    .mt-20{margin: 20px 0;}
+    
+
+    /* =========================================================================
+                                    Height + Width
+    ========================================================================= */
+
+    .h100{height: 100vh;}
+
+    /* =========================================================================
+                                    Font-size & Font-family
+    ========================================================================= */
+
+    .fs-20{font-size: 20px;}
+    .fs-25{font-size: 25px;}
+    .fs-30{font-size: 30px;}
+    .fs-40{font-size: 40px;}
+
+    .Raleway{font-family: "Raleway:500", sans-serif;}
+    .Raleway-bold{font-family: "Raleway:700", sans-serif;}
+
+    .Pangolin{font-family: "Pangolin", sans-serif;}
+
+    .Montserrat{font-family: 'Montserrat', sans-serif; font-weight: 500;}
+    .Montserrat-bold{font-family: 'Montserrat', sans-serif; font-weight: 700;}
+
+    /* =========================================================================
+                                    Color & Background
+    ========================================================================= */
+
+    .color-1{color: black;}
+
+    .white{color: #fff;}
+
+    .bg-red{background-color: red;}
+
+    .bg-img{background: url('../img/background-ardoise.jpg') center center; background-size: cover;}
+
+    /* =========================================================================
+                                    Text align & decoration
+    ========================================================================= */
+
+    .no-decoration{text-decoration: none;}
+
+    .list-style-none{list-style: none;}
+
+/* =========================================================================
+                                Spécifique
+========================================================================= */
+
+    /* =========================================================================
+                                    NAV
+    ========================================================================= */
+
+    /* Effet hover */
+    nav,li:hover{color: black;}
+
+    .fixed-top{position: fixed; width: 100%; left:0; top:0;}
+    .logo{width: 150px; height:150px;}
+
+
+
