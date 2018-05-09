@@ -85,3 +85,69 @@ submitSelect.addEventListener('click', function(e){
     e.preventDefault(); //Annule l'envoie du form en cours
 });
 
+submitselecttable.addEventListener('click', function(e){
+    var selectListeMental = document.getElementById("listemental");
+    var selectValueMental = parseInt(selectListeMental.value);
+    
+    if(selectValueMental > 0)
+    {
+        xhr = getxhr();
+        xhr.onreadystatechange = function()
+        { 
+            if(this.readyState == 4 && this.status === 200) //Vérifie si les infos sont prêtes à être lancées (STADE 4 + Status à 200)
+            { 
+                var randomReponse = document.getElementById('repMental');
+                randomReponse.innerHTML = this.responseText;             
+            }
+        }
+    
+        //Soumet les actions avec la méthode en asynchrone
+        xhr.open('GET', "traitement.php?selectListeValue=" + selectValueMental, true);
+        xhr.send();
+    }   else
+        {
+            document.getElementById('repMental').innerHTML = 'Erreur';   
+        }
+
+    e.preventDefault(); //Annule l'envoie du form en cours
+});
+
+submitReponse.addEventListener('click', function(e){
+    var inputAnswer = document.getElementById("answer");
+    var valueAnswer = inputAnswer.value;
+    var generateCalcul = document.getElementById('answer-calcul');
+    
+    if(generateCalcul != null && valueAnswer != "")
+    {
+        var value1 = generateCalcul.getAttribute('data-value');
+        var value2 = generateCalcul.getAttribute('data-random');
+
+        var goodresponse = value1 * value2;
+
+        xhr = getxhr();
+        xhr.onreadystatechange = function()
+        { 
+            if(this.readyState == 4 && this.status === 200) //Vérifie si les infos sont prêtes à être lancées (STADE 4 + Status à 200)
+            { 
+                var randomReponse = document.getElementById('responseCalcul');
+                randomReponse.innerHTML = this.responseText;             
+            }
+        }
+    
+        //Soumet les actions avec la méthode en asynchrone
+        xhr.open('GET', "traitement.php?reponseCalcul=" + valueAnswer + "&goodreponseCalcul=" + goodresponse , true);
+        xhr.send();
+    }   else
+        {
+            if(generateCalcul == null)
+            {
+                document.getElementById('responseCalcul').innerHTML = '<p>Aucun calcul demandé !</p>';
+            }   else if(valueAnswer == "")
+                        {
+                            document.getElementById('responseCalcul').innerHTML = "<p>Vous n'avez rien saisie !</p>";
+                        } 
+        }
+    
+    e.preventDefault(); //Annule l'envoie du form en cours
+});
+

@@ -39,16 +39,26 @@
             echo $retour;
         }
 
-/* if(isset($_GET['tables']))  //Si tables différent de NULL
-    { 
-        $value = intval($_GET['selectedValue']); //valeur numérique entière
-        $retour = '<ul>';
+        else if(isset($_GET['selectListeValue']))
+        {
+            $selectListeValue = $_GET['selectListeValue'];
+            $random = rand(1, 10);
+            $retour .= '<p id="answer-calcul" data-value="' . $selectListeValue . '" data-random="' . $random . '">' . $selectListeValue . ' x ' . $random . ' = ' . '</p>';
 
-        for($i=1; $i<=10; $i++){
-            $retour .= '<li>' . $i . ' x ' . $value . ' = ' . ($i*$value) . '</li>';
+            echo $retour;
         }
 
-        $retour .= '</ul>';
-        echo $retour;
-    }   */
-?>
+        else if(isset($_GET['reponseCalcul']) && isset($_GET['goodreponseCalcul']))
+        { 
+            $reponseCalcul = intval($_GET['reponseCalcul']);
+            $goodreponseCalcul = intval($_GET['goodreponseCalcul']);
+
+            if($reponseCalcul == $goodreponseCalcul)
+            {
+                $retour .= '<p>Vous avez gagné !</p>';
+            } else
+                {
+                    $retour .= '<p>Vous ne savez pas compter, ré-essayez</p>';
+                }
+            echo $retour;
+        }          

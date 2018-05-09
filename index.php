@@ -90,8 +90,8 @@
 <!-- PART 4 -->
         <section class="container">
             <h2>Le jeu du calcul mental édition débile #4</h2>
-            <form method="GET" id="jeu" action="index.php">
-                <select name="liste" id="listeDeroulante">
+            <form method="GET" id="jeu" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                <select name="listemental" id="listemental">
                     <option disabled selected value=""></option>
                     <option value="1">Table de 1</option>
                     <option value="2">Table de 2</option>
@@ -104,32 +104,18 @@
                     <option value="9">Table de 9</option>
                     <option value="10">Table de 10</option>
                 </select>
-                <button type="submit" id="submitselecttable" name="submit4">Envoyer</button>
+                <button type="submit" id="submitselecttable" name="submitselecttable">Envoyer</button>
             </form>
-                    
+
+            <div class="bg-red" id="repMental"></div>
+
             <form method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-<?php           if(isset($_GET['submit4']) && !empty($_GET['liste'])){
-                    $random = rand(1, 10);
-                    $listes = $_GET['liste'];
-                    $result = $listes * $random;
-                    echo '<p>' . $random . ' x ' . $listes . ' = '; ?>
-                    <input type="hidden" name="result" value="<?php echo $result ?>">
-<?php           } ?>
-                <input type="number" name="answer" id="answer">
-                <button type="submit" id="submitreponse" name="submit5">Envoyer</button>
+
+                <input type="text" name="answer" id="answer" value="">
+                <button type="submit" id="submitreponse" name="submitreponse">Envoyer</button>
             </form>
-            
-<?php       if(isset($_GET['submit5']) && isset($_GET['result'])){ //Si le submit a une valeur (quand cliqué)
-                $answer = intval($_GET['answer']); //On associe la variable au bouton
-                $result = intval($_GET['result']);
-                if($answer == $result){ ?>
-                    <p>Bravo, vous avez gagné !</p>    
-<?php           } else {
-                    echo '<p>Vous ne savez pas compter, ré-essayez</p>';
-                }
-            } elseif(isset($_GET['submit5']) && !isset($_GET['result'])) {
-                echo 'La tortue dépasse le lièvre.. Générez au moins une opération !';
-            } ?>            
+        
+            <div class="bg-red" id="responseCalcul"></div>
         </section>
 
         <script src="script.js"></script>
