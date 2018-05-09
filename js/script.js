@@ -51,7 +51,7 @@ submitCheckbox.addEventListener('click', function(e){
         xhr.send();
     }   else
         {
-            document.getElementById('repCheckbox').innerHTML = 'Erreur'; // Affiche un message d'erreur.   
+            document.getElementById('repCheckbox').innerHTML = '<p class="Pangolin fs-25">Veuillez sélectionner au moins 1 table.</p>'; // Affiche un message d'erreur.   
         }
 
     e.preventDefault(); //Annule l'envoie du form en cours
@@ -79,7 +79,7 @@ submitSelect.addEventListener('click', function(e){
         xhr.send();
     }   else
         {
-            document.getElementById('repTable').innerHTML = 'Erreur';   
+            document.getElementById('repTable').innerHTML = '<p class="fs-40">ERREUR 404 NOT FOUND</p>';   
         }
 
     e.preventDefault(); //Annule l'envoie du form en cours

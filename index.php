@@ -16,7 +16,7 @@
 
 <!-- HEADER -->
     <header>
-        <nav class="fixed-top">
+        <nav class="fixed-top pt-20">
             <ul class="Montserrat-bold fs-20 d-flex justify-content-around align-items-center">
                 <a class="no-decoration list-style-none m-10" href="#sectionrandom"><li class="color-nav">L'échauffement</li></a>
                 <a class="no-decoration list-style-none m-10" href="#sectionselect"><li class="color-nav">La sélection</li></a>
@@ -27,26 +27,29 @@
         </nav>
     </header>
 <!-- PART 1 RANDOM -->
-        <section id="sectionrandom" class="bg-img h100 d-flex justify-content-between">
-            <div class="w50 d-flex align-self-center column text-justify m-auto">
-                <h3 class="Montserrat-bold white fs-25 borderb-1">L'échauffement</h3>
-                <p class="Montserrat white fs-20 mt-20">Un petit échauffement avant de commencer à apprendre les tables de multiplication?
-                   A chaque visite sur notre site, une table de multiplication sera automatiquement choisit aléatoirement, entre 1 et 10).
+        <section id="sectionrandom" class="bg-img h100 d-flex justify-content-around">
+            
+            <div class="w40 mt-20 d-flex align-self-center column text-justify h50">
+                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">L'échauffement</h3>
+                <p class="Montserrat white fs-20 mt-20 line-height-30">Un petit échauffement avant de commencer à apprendre les tables de multiplication?
+                   A chaque visite sur notre site, une table de multiplication, entre 1 et 10, sera automatiquement choisit aléatoirement.
                 </p> 
-                <p class="Montserrat white fs-20">Le but est simple : à chaque visite sur notre site, nommer la table apparente à votre interlocuteur,
+                <p class="Montserrat white fs-20 mt-20 line-height-30"><span class="borderb-1">Le but est simple</span> : à chaque visite sur notre site, nommer la table apparente à votre interlocuteur,
                    demander lui de l'écrire entièrement sur un cahier (ou autres) pour mesurer ses acquis de la session précédente.
                 </p>
             </div>
-            <div class="w40 d-flex align-self-end mlr-auto">
-                <ul class="Pangolin white fs-40 m-auto">
+            <div class="w40 mt-20 d-flex align-self-center column h50">
+                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Table du jour</h3>
+                <ul class="Pangolin white fs-25 pt-20 m-auto">
 <?php           $x = rand(1,10); //Random de 1 à 10
                         for($y=1;$y<=10;$y++)
                         { 
-                            echo nl2br('<li class="mt-20">' . $x . 'x' . $y ." = ". $x*$y . "</li>");
+                            echo nl2br('<li class="mt-10">' . $x . ' x ' . $y ." = ". $x*$y . "</li>");
                         } 
 ?>
                 </ul>
             </div>
+           
         </section>
 
 
@@ -71,43 +74,33 @@
             </form>
             <div class="bg-red" id="repTable"></div>                      
         </section>
-<!-- PART 3 CHECKBOX REVISION -->
-<section class="flex justify-content">
-            <h2>Les données disponibles #2</h2>
-            <form name="tables" id="tables" method="GET" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>"> 
-                <label for="table1">Table de 1</label>
-                <input class="checkbox" type="checkbox" id="table1" value="1">
-                
-                <label for="table2">Table de 2</label>
-                <input class="checkbox" type="checkbox" id="table2" value="2">
-                
-                <label for="table3">Table de 3</label>
-                <input class="checkbox" type="checkbox" id="table3" value="3">
-                
-                <label for="table4">Table de 4</label>
-                <input class="checkbox" type="checkbox" id="table4" value="4">
-                
-                <label for="table5">Table de 5</label>
-                <input class="checkbox" type="checkbox" id="table5" value="5">
-                
-                <label for="table6">Table de 6</label>
-                <input class="checkbox" type="checkbox" id="table6" value="6">
-                
-                <label for="table7">Table de 7</label>
-                <input class="checkbox" type="checkbox" id="table7" value="7">
-                
-                <label for="table8">Table de 8</label>
-                <input class="checkbox" type="checkbox" id="table8" value="8">
-                
-                <label for="table9">Table de 9</label>
-                <input class="checkbox" type="checkbox" id="table9" value="9">
-                
-                <label for="table10">Table de 10</label>
-                <input class="checkbox" type="checkbox" id="table10" value="10">
 
-                <button type="submit" id="submitcheckbox" name="submitcheckbox">Envoyer</button>
-            </form>
-            <div class="bg-red" id="repCheckbox"></div>
+<!-- PART 3 CHECKBOX REVISION -->
+<section id="sectioncheckbox" class="bg-img h100 d-flex justify-content-around">
+
+    <div class="w40 mt-20 d-flex align-self-center column text-justify h50">
+        <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">La révision</h3>
+        <p class="Montserrat white fs-20 mt-20 line-height-30">MDR TROP BIEN LA VIE</p>
+        <form class="Pangolin white fs-20 d-flex column"name="tables" id="tables" method="GET" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+        
+<?php 
+            for($i = 1; $i <= 10; $i++)
+                {
+?> 
+                        <label for="table<?php echo $i ?>">
+                            Table de <?php echo $i ?>
+                            <input class="checkbox" type="checkbox" id="table<?php echo $i ?>" value="<?php echo $i ?>">   
+                        </label>               
+<?php           }
+?>               
+            <button type="submit" id="submitcheckbox" name="submitcheckbox">Afficher le(s) résultat(s)</button>
+        </form>
+    </div>
+    
+    <div id="repCheckbox" class="w40 mt-20 white d-flex align-self-center justify-content-around wrap h50">
+        <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Mes tables sélectionnées</h3>
+    </div>
+           
         </section>
 
 <!-- PART 4 QUIZZ FINAL -->

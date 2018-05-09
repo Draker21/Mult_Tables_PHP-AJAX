@@ -10,12 +10,12 @@
 
                 foreach($tables as $checkbox)
                 { 
-                    $retour .= '<ul>';
+                    $retour .= '<ul class="m-10">';
 
                     for($a=1;$a<=10;$a++)   //boucle de 1 à 10
                     { 
                         $resultat = $checkbox * $a;
-                        $retour .= "<li>" . $checkbox . 'x' . $a ." = ". $resultat . "</li>";
+                        $retour .= '<li class="Pangolin fs-20">' . $checkbox . ' x ' . $a ." = ". $resultat . "</li>";
                     }
 
                     $retour .= '</ul>';
