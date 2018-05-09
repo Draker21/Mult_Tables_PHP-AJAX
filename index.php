@@ -1,3 +1,5 @@
+
+
 <?php require ('ajax/traitement.php'); ?>
 
     <!DOCTYPE html>
@@ -16,8 +18,10 @@
 
 <!-- HEADER -->
     <header>
+
         <nav class="fixed-top pt-20">
             <ul class="Montserrat-bold fs-20 d-flex justify-content-around align-items-center">
+
                 <a class="no-decoration list-style-none m-10" href="#sectionrandom"><li class="color-nav">L'échauffement</li></a>
                 <a class="no-decoration list-style-none m-10" href="#sectionselect"><li class="color-nav">La sélection</li></a>
                 <img class="logo" src="img/logo.png" alt="Logo">
@@ -28,6 +32,7 @@
     </header>
 <!-- PART 1 RANDOM -->
         <section id="sectionrandom" class="bg-img h100 d-flex justify-content-around">
+
             
             <div class="w40 mt-20 d-flex align-self-center column text-justify h50">
                 <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">L'échauffement</h3>
@@ -41,6 +46,7 @@
             <div class="w40 mt-20 d-flex align-self-center column h50">
                 <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Table du jour</h3>
                 <ul class="Pangolin white fs-25 pt-20 m-auto">
+
 <?php           $x = rand(1,10); //Random de 1 à 10
                         for($y=1;$y<=10;$y++)
                         { 
@@ -52,30 +58,34 @@
            
         </section>
 
-
 <!-- PART 2 SELECT -->
-        <section class="container">
-        <h2>La liste presque infinie #3</h2>
-            <form method="GET" id="listeD" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-                <select name="liste" id="listeDeroulante">
-                    <option disabled selected value=""></option>
-                    <option value="1">Table de 1</option>
-                    <option value="2">Table de 2</option>
-                    <option value="3">Table de 3</option>
-                    <option value="4">Table de 4</option>
-                    <option value="5">Table de 5</option>
-                    <option value="6">Table de 6</option>
-                    <option value="7">Table de 7</option>
-                    <option value="8">Table de 8</option>
-                    <option value="9">Table de 9</option>
-                    <option value="10">Table de 10</option>
-                </select>
-                <button type="submit" id="submitselect" name="submitselect">Envoyer</button>
-            </form>
-            <div class="bg-red" id="repTable"></div>                      
+        <section id="sectionselect" class="bg-img h100 d-flex justify-content-center align-self-center">
+            <div class="w50 h50 d-flex column text-justify m-auto">
+                <h3 class="Montserrat-bold white fs-25 borderb-1">La sélection</h3>
+                <p class="Montserrat white fs-20 mt-20">Passons à un exercice un peu plus compliqué ! <br/>
+                Afin de vérifier si les tables de multiplication ont bien été apprises, vous pouvez générer n'importe quelle table entre un et dix.
+                </p>
+                <p class="Montserrat white fs-20 mt-20">Pour cela, il vous suffit de choisir celle que vous souhaitez et de cliquer sur 'Afficher'. <br/> Prêt ? Calculez !</p>
+            </div>
+
+            <div class="Montserrat white fs-20 m-auto w40 d-flex column justify-content-center align-self-center h50">
+                <h3 class="Montserrat-bold white fs-25 borderb-1">Choissisez une table</h3>
+                <form class="m-auto mt-20" method="GET" id="listeD" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                    <select class="Montserrat fs-20" name="liste" id="listeDeroulante">
+                        <option disabled selected value=""></option>
+<?php                    for($i = 1; $i <= 10; $i++){ ?>
+                        <option value="<?php echo $i ?>">Table de <?php echo $i ?></option>
+<?php }                       ?>
+                    </select>
+                <button class="fs-20" type="submit" id="submitselect" name="submitselect">Afficher</button>
+                </form>
+                <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="repTable"></div>
+            </div>
+              
         </section>
 
 <!-- PART 3 CHECKBOX REVISION -->
+
 <section id="sectioncheckbox" class="bg-img h100 d-flex justify-content-around">
 
     <div class="w40 mt-20 d-flex align-self-center column text-justify h50">
