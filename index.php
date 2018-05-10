@@ -106,12 +106,13 @@
             <button type="submit" id="submitcheckbox" name="submitcheckbox">Afficher le(s) résultat(s)</button>
         </form>
     </div>
-    
-    <div id="repCheckbox" class="w40 mt-20 white d-flex align-self-center justify-content-around wrap h50">
+
+    <section class="w40 mt-20 white d-flex align-self-center justify-content-around column h50">       
         <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Mes tables sélectionnées</h3>
-    </div>
-           
-        </section>
+        <div id="repCheckbox" class="mt-20 white d-flex align-self-center justify-content-around wrap"></div>
+    </section>  
+
+</section>
 
 <!-- PART 4 QUIZZ FINAL -->
         <section class="container">
