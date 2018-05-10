@@ -14,7 +14,7 @@
             <title>Révision mathématique</title>
         </head>
 
-    <body>
+    <body class="smooth-scroll">
 
 <!-- HEADER -->
     <header>
@@ -26,7 +26,7 @@
                 <a class="no-decoration list-style-none m-10" href="#sectionselect"><li class="color-nav">La sélection</li></a>
                 <img class="logo" src="img/logo.png" alt="Logo">
                 <a class="no-decoration list-style-none m-10" href="#sectioncheckbox"><li class="color-nav">La révision</li></a>
-                <a class="no-decoration list-style-none m-10" href="#sectionquizz"><li class="color-nav">Le Quizz final</li></a>
+                <a class="no-decoration list-style-none m-10" href="#sectionfinal"><li class="color-nav">Le Test final</li></a>
             </ul>
         </nav>
     </header>
@@ -79,7 +79,7 @@
                         <option value="<?php echo $i ?>">Table de <?php echo $i ?></option>
 <?php }                       ?>
                     </select>
-                <button class="fs-20" type="submit" id="submitselect" name="submitselect">Afficher</button>
+                <button class="btn" type="submit" id="submitselect" name="submitselect">Afficher</button>
                 </form>
                 <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="repTable"></div>
             </div>
@@ -94,7 +94,7 @@
         <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">La révision</h3>
         
         <p class="Montserrat white fs-20 mt-20 line-height-30">Rien de mieux qu'une bonne révision pour être sur d'être au point, pas vrai?
-        C'est la dernière ligne droite avant le quizz du jour ! Cliquer sur les tables que vous voulez réviser ou apprendre.
+        C'est la dernière ligne droite avant le quizz du jour ! Cliquez sur les tables que vous voulez réviser ou apprendre.
         </p>
 
         <p class="Montserrat white fs-20 mt-20 line-height-30"><span class="borderb-1">Le but de cet exercice</span> :
@@ -128,43 +128,50 @@
 </section>
 
 <!-- PART 4 QUIZZ FINAL -->
-        <section id="sectionquizz" class="bg-img h100 d-flex justify-content-around">
-            <div class="w40 h50 d-flex column text-justify m-auto">
-            <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Le Quizz final</h3>
-            <p class="Montserrat white fs-20 mt-20 line-height-30">
-            C'est la dernière ligne droite avant le quizz du jour ! Cliquer sur les tables que vous voulez réviser ou apprendre.
-            </p>
+<section id="sectionfinal" class="bg-img h100 d-flex justify-content-around">
+            <div class="w50 h50 d-flex column text-justify m-auto">
 
-            <p class="Montserrat white fs-20 mt-20 line-height-30"><span class="borderb-1">Le but de cet exercice</span> :
-            Vous pouvez l'imaginer comme si vous faisiez une interrogation complète à votre interlocuteur, vous choisiriez les tables
-            où il est en difficulté.</p>
-            <form method="GET" id="jeu" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-                <select name="listemental" id="listemental">
-                    <option disabled selected value=""></option>
-                    <option value="1">Table de 1</option>
-                    <option value="2">Table de 2</option>
-                    <option value="3">Table de 3</option>
-                    <option value="4">Table de 4</option>
-                    <option value="5">Table de 5</option>
-                    <option value="6">Table de 6</option>
-                    <option value="7">Table de 7</option>
-                    <option value="8">Table de 8</option>
-                    <option value="9">Table de 9</option>
-                    <option value="10">Table de 10</option>
-                </select>
-                <button type="submit" id="submitselecttable" name="submitselecttable">Envoyer</button>
-            </form>
+                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Le Test final</h3>
+                <p class="Montserrat white fs-20 mt-20 line-height-30">
+                Après ces quelques étapes, vous êtes maintenant prêt à effectuer le test final.
+                Rester concentré, il faut maintenant réussir à franchir cette dernière étape : le calcul mental!
+                </p>
 
-            <div class="bg-red" id="repMental"></div>
+                <p class="Montserrat white fs-20 mt-20 line-height-30"><span class="borderb-1">Le but de ce test</span> :
+                le calcul mental est l'une des étapes les plus importantes pour vérifier si vous avez bien mémorisé la logique
+                des tables de multiplications. Vous pouvez prêter votre appareil à votre interlocuteur pour qu'il fasse son test lui même,
+                évidemment il faudra choisir une table où votre interlocuteur n'est pas à l'aise avec celle-ci.
+                Bonne chance à vous!
+                </p>
 
-            <form method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                <form method="GET" id="jeu" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                    <select name="listemental" id="listemental">
+                        <option disabled selected value=""></option>
+                        <option value="1">Table de 1</option>
+                        <option value="2">Table de 2</option>
+                        <option value="3">Table de 3</option>
+                        <option value="4">Table de 4</option>
+                        <option value="5">Table de 5</option>
+                        <option value="6">Table de 6</option>
+                        <option value="7">Table de 7</option>
+                        <option value="8">Table de 8</option>
+                        <option value="9">Table de 9</option>
+                        <option value="10">Table de 10</option>
+                    </select>
+                    <button class="btn" type="submit" id="submitselecttable" name="submitselecttable">Envoyer</button>
+                </form>
 
-                <input type="text" name="answer" id="answer" value="">
-                <button type="submit" id="submitreponse" name="submitreponse">Envoyer</button>
-            </form>
+                <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="repMental"></div>
+
+                <form method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                    <input type="text" name="answer" id="answer" value="">
+                    <button type="submit" id="submitreponse" name="submitreponse">Envoyer</button>
+                </form>
         
-            <div class="bg-red" id="responseCalcul"></div>
-        </section>
+                <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="responseCalcul"></div>
+                </div>
+           </section>
+
 
         <script src="js/script.js"></script>
     </body>

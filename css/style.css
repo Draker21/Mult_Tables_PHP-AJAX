@@ -108,6 +108,8 @@
 
     .line-height-30{line-height: 30px;}
     .line-height-38{line-height: 38px;}
+    
+    .smooth-scroll{scroll-behavior: smooth;}
 
 /* =========================================================================
                                 Spécifique

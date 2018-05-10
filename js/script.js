@@ -51,7 +51,7 @@ submitCheckbox.addEventListener('click', function(e){
         xhr.send();
     }   else
         {
-            document.getElementById('repCheckbox').innerHTML = '<p class="Pangolin fs-25">Veuillez sélectionner au moins 1 table.</p>'; // Affiche un message d'erreur.   
+            document.getElementById('repCheckbox').innerHTML = '<p class="Pangolin fs-30">Veuillez sélectionner au moins 1 table.</p>'; // Affiche un message d'erreur.   
         }
 
     e.preventDefault(); //Annule l'envoie du form en cours
@@ -79,7 +79,7 @@ submitSelect.addEventListener('click', function(e){
         xhr.send();
     }   else
         {
-            document.getElementById('repTable').innerHTML = '<p class="fs-40">ERREUR 404 NOT FOUND</p>';   
+            document.getElementById('repTable').innerHTML = '<p class="Pangolin fs-30">Vous n\'avez pas sélectionné de table !</p>';   
         }
 
     e.preventDefault(); //Annule l'envoie du form en cours
@@ -106,7 +106,7 @@ submitselecttable.addEventListener('click', function(e){
         xhr.send();
     }   else
         {
-            document.getElementById('repMental').innerHTML = 'Erreur';   
+            document.getElementById('repMental').innerHTML = '<p class="Pangolin fs-30">Vous n\'avez pas sélectionné de table !</p>';   
         }
 
     e.preventDefault(); //Annule l'envoie du form en cours
@@ -141,10 +141,10 @@ submitReponse.addEventListener('click', function(e){
         {
             if(generateCalcul == null)
             {
-                document.getElementById('responseCalcul').innerHTML = '<p>Aucun calcul demandé !</p>';
+                document.getElementById('responseCalcul').innerHTML = '<p class="Pangolin fs-30">Aucun calcul n\'a été demandé !</p>';
             }   else if(valueAnswer == "")
                         {
-                            document.getElementById('responseCalcul').innerHTML = "<p>Vous n'avez rien saisie !</p>";
+                            document.getElementById('responseCalcul').innerHTML = '<p class="Pangolin fs-30">Vous n\'avez pas saisie de valeur !</p>';
                         } 
         }
     

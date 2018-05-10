@@ -26,13 +26,13 @@
         else if(isset($_GET['selectedValue']) && $_GET['selectedValue'] != "")    //Si le select a une valeur (quand cliqué)
         { 
             $valueSelected = $_GET['selectedValue'];                 
-            $retour .= '<ul>';
+            $retour .= '<ul class="m-10">';
 
                 for($b = 1 ; $b <= 10 ; $b++)   //Boucle 1 à 10
                 { 
 
                     $result = $valueSelected * $b; //Le résultat = Valeur choisie multiplié jusqu'à 10
-                    $retour .= "<li>" . $valueSelected . ' x ' . $b ." = ". $result . "</li>";
+                    $retour .= '<li class="Pangolin fs-20">' . $valueSelected . ' x ' . $b ." = ". $result . "</li>";
                 }
                 
             $retour .= '</ul>';
@@ -43,7 +43,7 @@
         {
             $selectListeValue = $_GET['selectListeValue'];
             $random = rand(1, 10);
-            $retour .= '<p id="answer-calcul" data-value="' . $selectListeValue . '" data-random="' . $random . '">' . $selectListeValue . ' x ' . $random . ' = ' . '</p>';
+            $retour .= '<p class="Pangolin fs-20" id="answer-calcul" data-value="' . $selectListeValue . '" data-random="' . $random . '">' . 'Combien font ' . $selectListeValue . ' x ' . $random . '</p>';
 
             echo $retour;
         }
@@ -55,10 +55,10 @@
 
             if($reponseCalcul == $goodreponseCalcul)
             {
-                $retour .= '<p>Vous avez gagné !</p>';
+                $retour .= '<p>Félicitation, vous avez trouvé la bonne réponse !</p>';
             } else
                 {
-                    $retour .= '<p>Vous ne savez pas compter, ré-essayez</p>';
+                    $retour .= '<p class="Pangolin fs-20">Ce n\'est pas la bonne réponse, ré-essayez</p>';
                 }
             echo $retour;
         }          
