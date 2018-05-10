@@ -43,7 +43,7 @@
         {
             $selectListeValue = $_GET['selectListeValue'];
             $random = rand(1, 10);
-            $retour .= '<p class="Pangolin fs-20" id="answer-calcul" data-value="' . $selectListeValue . '" data-random="' . $random . '">' . 'Combien font ' . $selectListeValue . ' x ' . $random . '</p>';
+            $retour .= '<p class="Pangolin fs-20 align-self-center" id="answer-calcul" data-value="' . $selectListeValue . '" data-random="' . $random . '">' . 'Combien font ' . $selectListeValue . ' x ' . $random . '</p>';
 
             echo $retour;
         }
@@ -55,10 +55,10 @@
 
             if($reponseCalcul == $goodreponseCalcul)
             {
-                $retour .= '<p>Félicitation, vous avez trouvé la bonne réponse !</p>';
+                $retour .= '<p class="Pangolin fs-30 color-2">Félicitation, vous avez trouvé la bonne réponse !</p>';
             } else
                 {
-                    $retour .= '<p class="Pangolin fs-20">Ce n\'est pas la bonne réponse, ré-essayez</p>';
+                    $retour .= '<p class="Pangolin fs-20 color-1">Ce n\'est pas la bonne réponse, ré-essayez</p>';
                 }
             echo $retour;
         }          

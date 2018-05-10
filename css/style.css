@@ -37,14 +37,20 @@
     .nomargin{margin: 0;}
     .nopadding{padding: 0;}
     .m-auto{margin:auto;}
+    .mtb-25-auto{margin: 25px auto;}
 
     .mlr-auto{margin: 0 auto;}
 
     .m-10{margin: 10px;}
+    .m-20{margin: 20px;}
+
 
     .mt-10{margin-top: 10px;}
     .mt-20{margin-top: 20px;}
     .mt-50{margin-top: 50px;}
+
+    .p-9{padding: 9px;}
+    .p-10{padding: 10px;}
 
     .pt-20{padding-top: 20px;}
 
@@ -56,9 +62,9 @@
     ========================================================================= */
 
     .h100{height: 100vh;}
-
     .h50{height: 50%;}
-    
+    .h100pct{height: 100%;}
+
     .w50{width: 50%;}
     .w40{width: 40%;}
     /* =========================================================================
@@ -83,12 +89,11 @@
                                 Color & Background & border
     ========================================================================= */
 
-    .color-1{color: #B22222;}
+    .color-1{color: #FF0000;}
+    .color-2{color: #4BB543;}
     .white{color: #fff;}
 
     .borderb-1{border-bottom: 1px solid #F0F001;}
-
-    .bg-red{background-color: red;}
 
     .bg-img{background: url('../img/background-ardoise.jpg') center center; background-size: cover;}
 
@@ -111,6 +116,8 @@
     
     .smooth-scroll{scroll-behavior: smooth;}
 
+    .smooth-scroll{scroll-behavior: smooth;}
+
 /* =========================================================================
                                 Spécifique
 ========================================================================= */
@@ -120,8 +127,11 @@
     ========================================================================= */
 
     /* Effet hover */
+
     .color-nav{color: #F0F001;}
     .color-nav:hover{color: #fff;}
+
+    /* Fix top navbar + logo nav */
 
     .fixed-top{position: fixed; width: 100%; left:0; top:0;}
     .logo{width: 150px; height:150px;}
@@ -130,7 +140,7 @@
                                     Button
     ========================================================================= */
 
-    .btn{
+    .btn, .select-style{
         color: #F0F001;
         border: 2px solid #F0F001;
         font-family: "Pangolin", sans-serif;
@@ -138,9 +148,18 @@
         background-color: rgba(0,0,0,0);
         margin:auto 0;
         cursor: pointer;
-        padding: 10px;
     }
 
     .btn:hover{
         color: #fff;
     }
+
+    .input-style{
+        color: #fff;
+        border: 2px solid #F0F001;
+        font-family: "Pangolin", sans-serif;
+        font-size: 20px;
+        background-color: rgba(0,0,0,0);
+        margin:auto 0;
+    }
+

@@ -1,5 +1,3 @@
-
-
 <?php require ('ajax/traitement.php'); ?>
 
     <!DOCTYPE html>
@@ -26,7 +24,7 @@
                 <a class="no-decoration list-style-none m-10" href="#sectionselect"><li class="color-nav">La sélection</li></a>
                 <img class="logo" src="img/logo.png" alt="Logo">
                 <a class="no-decoration list-style-none m-10" href="#sectioncheckbox"><li class="color-nav">La révision</li></a>
-                <a class="no-decoration list-style-none m-10" href="#sectionfinal"><li class="color-nav">Le Test final</li></a>
+                <a class="no-decoration list-style-none m-10" href="#sectionquizz"><li class="color-nav">Le Test final</li></a>
             </ul>
         </nav>
     </header>
@@ -62,24 +60,25 @@
         <section id="sectionselect" class="bg-img h100 d-flex justify-content-center">
             <div class="w40 h50 d-flex column text-justify m-auto">
                 
-                <h3 class="Montserrat-bold white fs-25 borderb-1">La sélection</h3>
+                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">La sélection</h3>
                 
-                <p class="Montserrat white fs-20 mt-20">Passons à un exercice un peu plus compliqué ! <br/>
-                Afin de vérifier si les tables de multiplication ont bien été apprises, vous pouvez générer n'importe quelle table entre un et dix.
+                <p class="Montserrat white fs-20 mt-20 line-height-30">Passons à un exercice un peu plus compliqué ! <br/>
+                Afin de vérifier si les tables de multiplication ont bien été apprises, vous pouvez générer n'importe quelle table entre 1 et 10.
                 </p>
-                <p class="Montserrat white fs-20 mt-20">Pour cela, il vous suffit de choisir celle que vous souhaitez et de cliquer sur 'Afficher'. <br/> Prêt ? Calculez !</p>
+                <p class="Montserrat white fs-20 mt-20 line-height-30"><span class="borderb-1">Le but de cet exercice</span> : S'entraîner avant tout ! Il vous suffit de choisir une table que vous souhaitez apprendre/réviser
+                et de cliquer sur 'Afficher'.</p>
             </div>
 
             <div class="Montserrat white fs-20 w40 d-flex column h50 m-auto">
-                <h3 class="Montserrat-bold white fs-25 borderb-1">Choissisez une table</h3>
+                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Choissisez une table</h3>
                 <form class="m-auto mt-20" method="GET" id="listeD" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-                    <select class="Montserrat fs-20" name="liste" id="listeDeroulante">
+                    <select class="select-style p-9" name="liste" id="listeDeroulante">
                         <option disabled selected value=""></option>
 <?php                    for($i = 1; $i <= 10; $i++){ ?>
                         <option value="<?php echo $i ?>">Table de <?php echo $i ?></option>
 <?php }                       ?>
                     </select>
-                <button class="btn" type="submit" id="submitselect" name="submitselect">Afficher</button>
+                <button class="btn p-10" type="submit" id="submitselect" name="submitselect">Afficher</button>
                 </form>
                 <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="repTable"></div>
             </div>
@@ -115,23 +114,22 @@
 <?php           }
 ?>              </div>
                         
-                <button class="btn" type="submit" id="submitcheckbox" name="submitcheckbox">Afficher le(s) résultat(s)</button>
+                <button class="btn p-10" type="submit" id="submitcheckbox" name="submitcheckbox">Afficher le(s) résultat(s)</button>
             </div>
         </form>
     </div>
 
     <section class="Montserrat white fs-20 w40 d-flex column h50 m-auto">       
         <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Mes tables sélectionnées</h3>
-        <div id="repCheckbox" class="mt-20 white d-flex justify-content-around wrap"></div>
+        <div id="repCheckbox" class="mt-20 white d-flex justify-content-around wrap h100pct"></div>
     </section>  
 
 </section>
 
 <!-- PART 4 QUIZZ FINAL -->
-<section id="sectionfinal" class="bg-img h100 d-flex justify-content-around">
-            <div class="w50 h50 d-flex column text-justify m-auto">
-
-                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Le Test final</h3>
+        <section id="sectionquizz" class="bg-img h100 d-flex justify-content-around">
+            <div class="h50 d-flex column text-justify m-auto w50">
+                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Le Quizz final</h3>
                 <p class="Montserrat white fs-20 mt-20 line-height-30">
                 Après ces quelques étapes, vous êtes maintenant prêt à effectuer le test final.
                 Rester concentré, il faut maintenant réussir à franchir cette dernière étape : le calcul mental!
@@ -144,34 +142,34 @@
                 Bonne chance à vous!
                 </p>
 
-                <form class="mt-20 m-auto" method="GET" id="jeu" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-                    <select name="listemental" id="listemental">
-                        <option disabled selected value=""></option>
-                        <option value="1">Table de 1</option>
-                        <option value="2">Table de 2</option>
-                        <option value="3">Table de 3</option>
-                        <option value="4">Table de 4</option>
-                        <option value="5">Table de 5</option>
-                        <option value="6">Table de 6</option>
-                        <option value="7">Table de 7</option>
-                        <option value="8">Table de 8</option>
-                        <option value="9">Table de 9</option>
-                        <option value="10">Table de 10</option>
-                    </select>
-                    <button class="btn" type="submit" id="submitselecttable" name="submitselecttable">Envoyer</button>
-                </form>
+                    <form class="mtb-25-auto" method="GET" id="jeu" class="d-flex justify-content-center" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                        <select class="select-style p-9" name="listemental" id="listemental" class="fs-20 Montserrat">
+                            <option disabled selected value=""></option>
+                            <option value="1">Table de 1</option>
+                            <option value="2">Table de 2</option>
+                            <option value="3">Table de 3</option>
+                            <option value="4">Table de 4</option>
+                            <option value="5">Table de 5</option>
+                            <option value="6">Table de 6</option>
+                            <option value="7">Table de 7</option>
+                            <option value="8">Table de 8</option>
+                            <option value="9">Table de 9</option>
+                            <option value="10">Table de 10</option>
+                        </select>
+                        <button class="btn p-10" type="submit" id="submitselecttable" name="submitselecttable">Générer</button>
+                    </form>
 
-                <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="repMental"></div>
+                    <div class="Pangolin fs-35 white d-flex justify-content-center" id="repMental"></div>
 
-                <form class="m-auto mt-20" method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-                    <input type="text" name="answer" id="answer" value="">
-                    <button type="submit" id="submitreponse" name="submitreponse">Envoyer</button>
-                </form>
-        
-                <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="responseCalcul"></div>
-                </div>
-           </section>
+                    <form class="mtb-25-auto" method="GET" id="last" class="d-flex justify-content-center" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                        <input class="input-style p-10"type="text" name="answer" id="answer" value="">
+                        <button class="btn p-10" type="submit" id="submitreponse" name="submitreponse">Vérifier</button>
+                    </form>
 
+                    <div class="Pangolin fs-35 white line-height-38 d-flex justify-content-center" id="responseCalcul"></div>
+                
+            </div>
+        </section>
 
         <script src="js/script.js"></script>
     </body>
