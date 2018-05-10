@@ -26,7 +26,7 @@
                 <a class="no-decoration list-style-none m-10" href="#sectionselect"><li class="color-nav">La sélection</li></a>
                 <img class="logo" src="img/logo.png" alt="Logo">
                 <a class="no-decoration list-style-none m-10" href="#sectioncheckbox"><li class="color-nav">La révision</li></a>
-                <a class="no-decoration list-style-none m-10" href="#sectionfinal"><li class="color-nav">Le Test final</li></a>
+                <a class="no-decoration list-style-none m-10" href="#sectionquizz"><li class="color-nav">Le Test final</li></a>
             </ul>
         </nav>
     </header>
@@ -128,10 +128,9 @@
 </section>
 
 <!-- PART 4 QUIZZ FINAL -->
-<section id="sectionfinal" class="bg-img h100 d-flex justify-content-around">
-            <div class="w50 h50 d-flex column text-justify m-auto">
-
-                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Le Test final</h3>
+        <section id="sectionquizz" class="bg-img h100 d-flex justify-content-around">
+            <div class="h50 d-flex column text-justify m-auto w50">
+                <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Le Quizz final</h3>
                 <p class="Montserrat white fs-20 mt-20 line-height-30">
                 Après ces quelques étapes, vous êtes maintenant prêt à effectuer le test final.
                 Rester concentré, il faut maintenant réussir à franchir cette dernière étape : le calcul mental!
@@ -144,34 +143,33 @@
                 Bonne chance à vous!
                 </p>
 
-                <form method="GET" id="jeu" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-                    <select name="listemental" id="listemental">
-                        <option disabled selected value=""></option>
-                        <option value="1">Table de 1</option>
-                        <option value="2">Table de 2</option>
-                        <option value="3">Table de 3</option>
-                        <option value="4">Table de 4</option>
-                        <option value="5">Table de 5</option>
-                        <option value="6">Table de 6</option>
-                        <option value="7">Table de 7</option>
-                        <option value="8">Table de 8</option>
-                        <option value="9">Table de 9</option>
-                        <option value="10">Table de 10</option>
-                    </select>
-                    <button class="btn" type="submit" id="submitselecttable" name="submitselecttable">Envoyer</button>
-                </form>
+                    <form class="m-auto mt-20" method="GET" id="jeu" class="d-flex justify-content-center" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                        <select name="listemental" id="listemental" class="fs-20 Montserrat">
+                            <option disabled selected value=""></option>
+                            <option value="1">Table de 1</option>
+                            <option value="2">Table de 2</option>
+                            <option value="3">Table de 3</option>
+                            <option value="4">Table de 4</option>
+                            <option value="5">Table de 5</option>
+                            <option value="6">Table de 6</option>
+                            <option value="7">Table de 7</option>
+                            <option value="8">Table de 8</option>
+                            <option value="9">Table de 9</option>
+                            <option value="10">Table de 10</option>
+                        </select>
+                        <button type="submit" id="submitselecttable" name="submitselecttable" class="btn Montserrat">Générer</button>
+                    </form>
 
-                <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="repMental"></div>
+                    <div class="Pangolin fs-35 mt-20 white line-height-38 d-flex justify-content-center" id="repMental"></div>
 
-                <form method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
-                    <input type="text" name="answer" id="answer" value="">
-                    <button type="submit" id="submitreponse" name="submitreponse">Envoyer</button>
-                </form>
-        
-                <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="responseCalcul"></div>
-                </div>
-           </section>
-
+                    <form class="m-auto mt-20" method="GET" id="last" class="d-flex justify-content-center" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                        <input type="text" name="answer" id="answer" value="" class="fs-20 Montserrat">
+                        <button type="submit" id="submitreponse" name="submitreponse" class="btn Montserrat">Vérifier</button>
+                    </form>
+                    <div class="Pangolin fs-35 mt-20 white line-height-38 m-auto" id="responseCalcul"></div>
+                
+            </div>
+        </section>
 
         <script src="js/script.js"></script>
     </body>
