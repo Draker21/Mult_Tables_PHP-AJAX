@@ -33,7 +33,6 @@
 <!-- PART 1 RANDOM -->
         <section id="sectionrandom" class="bg-img h100 d-flex justify-content-around">
 
-            
             <div class="w40 mt-20 d-flex align-self-center column text-justify h50">
                 <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">L'échauffement</h3>
                 <p class="Montserrat white fs-20 mt-20 line-height-30">Un petit échauffement avant de commencer à apprendre les tables de multiplication?
@@ -43,6 +42,7 @@
                    demander lui de l'écrire entièrement sur un cahier (ou autres) pour mesurer ses acquis de la session précédente.
                 </p>
             </div>
+
             <div class="w40 mt-20 d-flex align-self-center column h50">
                 <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Table du jour</h3>
                 <ul class="Pangolin white fs-25 pt-20 m-auto">
@@ -61,14 +61,16 @@
 <!-- PART 2 SELECT -->
         <section id="sectionselect" class="bg-img h100 d-flex justify-content-center">
             <div class="w40 h50 d-flex column text-justify m-auto">
+                
                 <h3 class="Montserrat-bold white fs-25 borderb-1">La sélection</h3>
+                
                 <p class="Montserrat white fs-20 mt-20">Passons à un exercice un peu plus compliqué ! <br/>
                 Afin de vérifier si les tables de multiplication ont bien été apprises, vous pouvez générer n'importe quelle table entre un et dix.
                 </p>
                 <p class="Montserrat white fs-20 mt-20">Pour cela, il vous suffit de choisir celle que vous souhaitez et de cliquer sur 'Afficher'. <br/> Prêt ? Calculez !</p>
             </div>
 
-            <div class="Montserrat white fs-20 m-auto w40 d-flex column justify-content-center h50">
+            <div class="Montserrat white fs-20 w40 d-flex column h50 m-auto">
                 <h3 class="Montserrat-bold white fs-25 borderb-1">Choissisez une table</h3>
                 <form class="m-auto mt-20" method="GET" id="listeD" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
                     <select class="Montserrat fs-20" name="liste" id="listeDeroulante">
@@ -88,7 +90,7 @@
 
 <section id="sectioncheckbox" class="bg-img h100 d-flex justify-content-around">
 
-    <div class="w40 mt-20 d-flex align-self-center column text-justify h50">
+    <div class="w40 h50 d-flex column text-justify m-auto">
         <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">La révision</h3>
         
         <p class="Montserrat white fs-20 mt-20 line-height-30">Rien de mieux qu'une bonne révision pour être sur d'être au point, pas vrai?
@@ -118,15 +120,16 @@
         </form>
     </div>
 
-    <section class="w40 mt-20 white d-flex justify-content-around align-self-center column h50">       
+    <section class="Montserrat white fs-20 w40 d-flex column h50 m-auto">       
         <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Mes tables sélectionnées</h3>
-        <div id="repCheckbox" class="mt-20 white d-flex align-self-center justify-content-around wrap"></div>
+        <div id="repCheckbox" class="mt-20 white d-flex justify-content-around wrap"></div>
     </section>  
 
 </section>
 
 <!-- PART 4 QUIZZ FINAL -->
-        <section class="bg-img h100 d-flex justify-content-around align-items-center">
+        <section id="sectionquizz" class="bg-img h100 d-flex justify-content-around">
+            <div class="w40 h50 d-flex column text-justify m-auto">
             <h3 class="Montserrat-bold white fs-25 borderb-1 pb-10">Le Quizz final</h3>
             <p class="Montserrat white fs-20 mt-20 line-height-30">
             C'est la dernière ligne droite avant le quizz du jour ! Cliquer sur les tables que vous voulez réviser ou apprendre.
