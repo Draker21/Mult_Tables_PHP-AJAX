@@ -21,6 +21,7 @@
     .justify-content-between{justify-content:space-between;}
 
     .align-self-center{align-self: center;}
+    .align-self-start{align-self: flex-start;}
     .align-self-end{align-self: flex-end;}
 
     .align-items-center{align-items: center;}
@@ -123,5 +124,21 @@
     .fixed-top{position: fixed; width: 100%; left:0; top:0;}
     .logo{width: 150px; height:150px;}
 
+    /* =========================================================================
+                                    Button
+    ========================================================================= */
 
+    .btn{
+        color: #F0F001;
+        border: 2px solid #F0F001;
+        font-family: "Pangolin", sans-serif;
+        font-size: 20px;
+        background-color: rgba(0,0,0,0);
+        margin:auto 0;
+        cursor: pointer;
+        padding: 10px;
+    }
 
+    .btn:hover{
+        color: #fff;
+    }

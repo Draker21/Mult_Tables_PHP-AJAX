@@ -32,7 +32,7 @@
                 { 
 
                     $result = $valueSelected * $b; //Le résultat = Valeur choisie multiplié jusqu'à 10
-                    $retour .= "<li>" . $valueSelected . 'x' . $b ." = ". $result . "</li>";
+                    $retour .= "<li>" . $valueSelected . ' x ' . $b ." = ". $result . "</li>";
                 }
                 
             $retour .= '</ul>';
