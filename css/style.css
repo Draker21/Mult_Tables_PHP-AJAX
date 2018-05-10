@@ -10,8 +10,6 @@
 
     .d-flex{display: flex;}
 
-    
-
     /* =========================================================================
                                     Flex Box
     ========================================================================= */
@@ -37,6 +35,7 @@
     .nomargin{margin: 0;}
     .nopadding{padding: 0;}
     .m-auto{margin:auto;}
+
     .mtb-25-auto{margin: 25px auto;}
 
     .mlr-auto{margin: 0 auto;}
@@ -67,6 +66,7 @@
 
     .w50{width: 50%;}
     .w40{width: 40%;}
+
     /* =========================================================================
                                     Font-size & Font-family
     ========================================================================= */
@@ -76,9 +76,6 @@
     .fs-30{font-size: 30px;}
     .fs-35{font-size: 35px;}
     .fs-40{font-size: 40px;}
-
-    .Raleway{font-family: "Raleway:500", sans-serif;}
-    .Raleway-bold{font-family: "Raleway:700", sans-serif;}
 
     .Pangolin{font-family: "Pangolin", sans-serif;}
 

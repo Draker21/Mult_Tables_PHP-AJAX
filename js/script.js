@@ -151,3 +151,28 @@ submitReponse.addEventListener('click', function(e){
     e.preventDefault(); //Annule l'envoie du form en cours
 });
 
+// Fonction pour désactiver le scroll sur tout le site (touche du clavier, souris etc...)
+function disableScroll(e){
+	
+	if (e.keyCode) {
+		/^(32|33|34|35|36|38|40)$/.test(e.keyCode) && e.preventDefault();
+	}else {
+		e.preventDefault();
+	}
+
+}
+
+addEventListener("mousewheel", disableScroll, false);
+addEventListener("DOMMouseScroll", disableScroll, false);
+addEventListener("keydown", disableScroll, false);
+
+// Fonction pour un effet smooth scroll tout les liens du site, soit la navbar.
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
