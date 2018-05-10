@@ -144,7 +144,7 @@
                 Bonne chance à vous!
                 </p>
 
-                <form method="GET" id="jeu" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                <form class="mt-20 m-auto" method="GET" id="jeu" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
                     <select name="listemental" id="listemental">
                         <option disabled selected value=""></option>
                         <option value="1">Table de 1</option>
@@ -163,7 +163,7 @@
 
                 <div class="Pangolin fs-35 mt-20 white m-auto line-height-38" id="repMental"></div>
 
-                <form method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
+                <form class="m-auto mt-20" method="GET" id="last" action="<?php echo htmlentities($_SERVER['PHP_SELF'])?>">
                     <input type="text" name="answer" id="answer" value="">
                     <button type="submit" id="submitreponse" name="submitreponse">Envoyer</button>
                 </form>
